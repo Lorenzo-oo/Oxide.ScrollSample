@@ -1,15 +1,27 @@
 ﻿using Network;
 using Oxide.Core.Libraries.Covalence;
-using Oxide.Game.Rust.Cui;
 using UnityEngine;
 using UnityEngine.UI;
+using Oxide.Game.Rust.Cui;
+using Oxide.Game.Rust.Libraries;
+using Oxide.Core;
 namespace Oxide.Plugins;
+using RustLib = Oxide.Game.Rust.Libraries.Rust;
 
 [Info("Scroll Sample", "Lorenzo", "1.0.0")]
 [Description("Sample code for scroll CUI")]
 class ScrollSample : CovalencePlugin
 {
+    private readonly RustLib rust = Interface.Oxide.GetLibrary<RustLib>();
+
     #region hooks
+
+    private void OnServerInitialized(bool serverInitialized)
+    {
+        Puts("Use chat command /scrollui  to open Scroll sample UI");
+
+        rust.BroadcastChat("Use chat command /scrollui  to open Scroll sample UI");
+    }
 
     private void OnClientCommand(Connection connection, string text)
     {
