@@ -1,13 +1,11 @@
 ﻿using Network;
 using Oxide.Core.Libraries.Covalence;
 using Oxide.Game.Rust.Cui;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 namespace Oxide.Plugins;
 
-[Info("Scroll Sample", "Lorenzo", "0.1.0")]
+[Info("Scroll Sample", "Lorenzo", "1.0.0")]
 [Description("Sample code for scroll CUI")]
 class ScrollSample : CovalencePlugin
 {
